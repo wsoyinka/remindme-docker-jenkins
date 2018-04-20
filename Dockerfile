@@ -14,7 +14,7 @@ RUN groupadd -g ${DOCKER_GID:-497} docker
 
 ARG DOCKER_ENGINE=18.03.0-ce
 ARG DOCKER_VERSION=18.03.0~ce-0~debian
-ARG DOCKER_COMPOSE=1.20.1
+ARG DOCKER_COMPOSE=1.21.0
 
 
 RUN apt-get update -u && \
@@ -32,7 +32,7 @@ RUN  curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && 
 	usermod -aG users jenkins && \
 	usermod -aG root jenkins 
 
-RUN  pip install docker-compose==${DOCKER_COMPOSE:-1.20.1} && \
+RUN  pip install docker-compose==${DOCKER_COMPOSE:-1.21.0} && \
 	pip install ansible boto boto3
 
 USER jenkins
